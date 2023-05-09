@@ -10,7 +10,7 @@ public class DashboardViewModel extends ViewModel {
 
     public DashboardViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is dashboard fragment! \n Testing Git Commit and Push!");
+        mText.setValue("This is dashboard fragment! \n Testing Git Commit, Push and Pull!");
     }
 
     public LiveData<String> getText() {
