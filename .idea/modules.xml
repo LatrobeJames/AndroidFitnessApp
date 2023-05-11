@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/AndroidFitnessApp.iml" filepath="$PROJECT_DIR$/.idea/AndroidFitnessApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AndroidFitnessApp.iml" filepath="$PROJECT_DIR$/.idea/modules/AndroidFitnessApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AndroidFitnessApp.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AndroidFitnessApp.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AndroidFitnessApp.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AndroidFitnessApp.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AndroidFitnessApp.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AndroidFitnessApp.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AndroidFitnessApp.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AndroidFitnessApp.app.unitTest.iml" />
     </modules>
   </component>
 </project>
