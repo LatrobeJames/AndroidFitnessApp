@@ -2,4 +2,5 @@
 <resources>
     <string name="begin_today_s_exercise">Begin Today\'s Exercise</string>
     <string name="Leaderboards" />
+    <string name="login">Login</string>
 </resources>
