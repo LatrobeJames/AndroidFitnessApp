@@ -23,6 +23,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
 
     Button startButton;
+    Button button123;
     GoogleSignInOptions googleSignInOptions;
     GoogleSignInClient googleSignInClient;
 
@@ -34,17 +35,20 @@ public class WelcomeActivity extends AppCompatActivity {
         googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
         googleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions);
 
-        //nameTextView = findViewById(R.id.nameTextView);
-       // signOutButton = findViewById(R.id.signOutButton);
-
-
         startButton = findViewById(R.id.start_button);
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 GoogleSignInHelper();
-                //Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
-                //startActivity(intent);
+            }
+        });
+
+        button123 = findViewById(R.id.button123);
+        button123.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2 = new Intent(WelcomeActivity.this, MainActivity.class);
+                startActivity(intent2);
             }
         });
 

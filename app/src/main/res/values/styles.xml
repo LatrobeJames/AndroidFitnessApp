@@ -3,4 +3,7 @@
     <style name="BlackButton" parent="Widget.MaterialComponents.Button">
         <item name="backgroundTint">@android:color/black</item>
     </style>
+    <style name="WhiteButton" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@android:color/white</item>
+    </style>
 </resources>
