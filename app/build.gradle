@@ -4,6 +4,10 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        'James SHA1 stuff' {
+        }
+    }
     namespace 'com.example.androidfitnessapp'
     compileSdk 33
 

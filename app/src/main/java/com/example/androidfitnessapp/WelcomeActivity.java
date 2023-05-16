@@ -63,13 +63,14 @@ public class WelcomeActivity extends AppCompatActivity {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try{
                 task.getResult(ApiException.class);
-                //not sur eif we need to finish our current one
+                //not sure if we need to finish our current one
                 //finish();
                 Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
                 startActivity(intent);
                 //AuthedHomeActivity();
             } catch (ApiException e) {
-                Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
+                String errorMessage = e.getMessage();
+                Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show();
             }
         }
 
