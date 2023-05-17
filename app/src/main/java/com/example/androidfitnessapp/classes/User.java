@@ -1,27 +1,48 @@
 package com.example.androidfitnessapp.classes;
 
 public class User {
-    private String Name;
-    private int Score;
+    private String firstName;
+    private String lastName;
+    private int fitnessScore;
 
-    public User(String name, int score) {
-        Name = name;
-        Score = score;
+    public User(String firstName, String lastName, int fitnessScore) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.fitnessScore = fitnessScore;
     }
 
     public User() {}
 
-    public String getName() { return Name; }
-    public void SetName(String name) {Name = name;}
+    public String getFirstName() {
+        return firstName;
+    }
 
-    public int getScore() { return Score;}
-    public void setScore(int score) { Score = score; }
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public int getFitnessScore() {
+        return fitnessScore;
+    }
+
+    public void setFitnessScore(int fitnessScore) {
+        this.fitnessScore = fitnessScore;
+    }
 
     @Override
     public String toString() {
         return "User{" +
-                "Name=' " + Name + '\'' +
-                ", Score='" + Score + '\'' +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", fitnessScore=" + fitnessScore +
                 '}';
     }
 }

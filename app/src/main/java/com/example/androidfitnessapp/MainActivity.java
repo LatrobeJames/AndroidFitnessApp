@@ -2,6 +2,10 @@ package com.example.androidfitnessapp;
 
 import android.os.Bundle;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,7 +18,14 @@ import com.example.androidfitnessapp.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ActivityMainBinding binding;
+
+
+
+
+
+
+
+        private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
