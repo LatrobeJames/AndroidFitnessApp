@@ -8,6 +8,7 @@
 
     <Button
         android:id="@+id/start_button"
+        style="@style/BlackButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="0dp"
@@ -17,23 +18,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button123"
+
+    <TextView
+        android:id="@+id/or"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        style="@style/WhiteButton"
-        tools:layout_editor_absoluteX="285dp"
-        tools:layout_editor_absoluteY="152dp"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="342dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="152dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginTop="16dp"
+        android:text="Or"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/google" />
+
+    <ImageButton
+        android:id="@+id/google"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="171dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="96dp"
+        app:layout_constraintBottom_toTopOf="@+id/start_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/google_sign_in_light" />
 

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 
@@ -22,7 +23,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
 
 
-    Button startButton;
+    ImageButton startButton;
     Button button123;
     GoogleSignInOptions googleSignInOptions;
     GoogleSignInClient googleSignInClient;
@@ -35,7 +36,7 @@ public class WelcomeActivity extends AppCompatActivity {
         googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
         googleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions);
 
-        startButton = findViewById(R.id.start_button);
+        startButton = findViewById(R.id.google);
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,7 +44,7 @@ public class WelcomeActivity extends AppCompatActivity {
             }
         });
 
-        button123 = findViewById(R.id.button123);
+        button123 = findViewById(R.id.start_button);
         button123.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
