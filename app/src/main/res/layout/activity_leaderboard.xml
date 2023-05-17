@@ -38,5 +38,73 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
+    <TextView
+        android:id="@+id/name1"
+        android:layout_width="92dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="13dp"
+        android:text="First Name"
+        app:layout_constraintBottom_toTopOf="@+id/name2"
+        app:layout_constraintEnd_toStartOf="@+id/name1b"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbTitle" />
+
+    <TextView
+        android:id="@+id/name1b"
+        android:layout_width="87dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginEnd="47dp"
+        android:layout_marginBottom="13dp"
+        android:text="Last Name"
+        app:layout_constraintBottom_toTopOf="@+id/name2b"
+        app:layout_constraintEnd_toStartOf="@+id/score1"
+        app:layout_constraintTop_toBottomOf="@+id/lbTitle" />
+
+    <TextView
+        android:id="@+id/score1"
+        android:layout_width="77dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="75dp"
+        android:text="Score"
+        app:layout_constraintStart_toEndOf="@+id/name1b"
+        app:layout_constraintTop_toBottomOf="@+id/lbTitle" />
+
+    <TextView
+        android:id="@+id/score2"
+        android:layout_width="77dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="13dp"
+        android:text="Score"
+        app:layout_constraintStart_toEndOf="@+id/name2b"
+        app:layout_constraintTop_toBottomOf="@+id/score1" />
+
+    <TextView
+        android:id="@+id/name2"
+        android:layout_width="92dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="14dp"
+        android:text="First Name"
+        app:layout_constraintEnd_toStartOf="@+id/name2b"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name1" />
+
+    <TextView
+        android:id="@+id/name2b"
+        android:layout_width="87dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="47dp"
+        android:text="Last Name"
+        app:layout_constraintEnd_toStartOf="@+id/score2"
+        app:layout_constraintTop_toBottomOf="@+id/name1b" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
