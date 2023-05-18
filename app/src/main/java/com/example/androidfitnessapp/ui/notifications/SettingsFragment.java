@@ -14,22 +14,22 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.androidfitnessapp.R;
 import com.example.androidfitnessapp.WelcomeActivity;
-import com.example.androidfitnessapp.databinding.FragmentNotificationsBinding;
+import com.example.androidfitnessapp.databinding.FragmentSettingsBinding;
 
-public class NotificationsFragment extends Fragment {
+public class SettingsFragment extends Fragment {
 
-    private FragmentNotificationsBinding binding;
+    private FragmentSettingsBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        NotificationsViewModel notificationsViewModel =
-                new ViewModelProvider(this).get(NotificationsViewModel.class);
+        SettingsViewModel settingsViewModel =
+                new ViewModelProvider(this).get(SettingsViewModel.class);
 
-        binding = FragmentNotificationsBinding.inflate(inflater, container, false);
+        binding = FragmentSettingsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         final TextView textView = binding.textNotifications;
-        notificationsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        settingsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
         Button returnButton = root.findViewById(R.id.logOut);
         returnButton.setOnClickListener(new View.OnClickListener() {
