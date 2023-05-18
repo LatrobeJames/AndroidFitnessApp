@@ -49,6 +49,7 @@ public class WelcomeActivity extends AppCompatActivity {
             }
         });
 
+        // This button skips google SSO. No login but uses local storage for streak
         button123 = findViewById(R.id.start_button);
         button123.setOnClickListener(new View.OnClickListener() {
             @Override

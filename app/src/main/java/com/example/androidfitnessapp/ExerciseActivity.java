@@ -104,10 +104,10 @@ public class ExerciseActivity extends AppCompatActivity {
                   //  Toast.makeText(ExerciseActivity.this, "Time expired! Values reset to default.", Toast.LENGTH_SHORT).show() }
 
                 // I don't know why but the exercise page needs to be closed and re-opened for this toast to show
-                else if (elapsedTime < 30000) {
-                    long remainingTime = 30000 - elapsedTime;
-                    Toast.makeText(ExerciseActivity.this, "You're too early! Button can be pressed again in " + remainingTime / 1000 + " seconds.", Toast.LENGTH_SHORT).show();
-                }
+                // else if (elapsedTime < 30000) {
+                //    long remainingTime = 30000 - elapsedTime;
+                //    Toast.makeText(ExerciseActivity.this, "You're too early! Button can be pressed again in " + remainingTime / 1000 + " seconds.", Toast.LENGTH_SHORT).show();
+                // }
             }
         });
 
@@ -141,6 +141,7 @@ public class ExerciseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        handler.removeCallbacks(delayRunnable);
+
+        // handler.removeCallbacks(delayRunnable);
     }
 }

@@ -28,6 +28,8 @@ public class SettingsFragment extends Fragment {
         binding = FragmentSettingsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        // This was provided as part of the template
+        // Repurposed for settings menu
         final TextView textView = binding.textNotifications;
         settingsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
