@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ExerciseActivity">
+
+    <Button
+        android:id="@+id/streak"
+        style="@style/BlackButton"
+        android:layout_width="361dp"
+        android:layout_height="102dp"
+        android:text="Submit Exercise"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
+
+    <TextView
+        android:id="@+id/visibleStreak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toTopOf="@+id/streak"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.955" />
+
+    <TextView
+        android:id="@+id/exerciseMainTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="508dp"
+        android:text="Today's Exercise"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toTopOf="@+id/streak"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/streakTitle"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginBottom="12dp"
+        android:text="Current Streak"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="normal|bold"
+        app:layout_constraintBottom_toTopOf="@+id/visibleStreak"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/exercise1"
+        android:layout_width="70dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="56dp"
+        android:text="Pushups"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exerciseMainTitle" />
+
+    <TextView
+        android:id="@+id/exercise3"
+        android:layout_width="107dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginBottom="266dp"
+        android:text="Jumping Jacks"
+        app:layout_constraintBottom_toTopOf="@+id/streakTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exercise2" />
+
+    <TextView
+        android:id="@+id/exercise4"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="36dp"
+        android:text="Squats"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exercise2" />
+
+    <TextView
+        android:id="@+id/exercise2"
+        android:layout_width="69dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="8dp"
+        android:text="Situps"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exercise1" />
+
+    <TextView
+        android:id="@+id/exercise1Counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="146dp"
+        android:text="1"
+        app:layout_constraintStart_toEndOf="@+id/exercise1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/exercise2Counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="145dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginBottom="11dp"
+        android:text="1"
+        app:layout_constraintBottom_toTopOf="@+id/exercise3Counter"
+        app:layout_constraintStart_toEndOf="@+id/exercise2"
+        app:layout_constraintTop_toBottomOf="@+id/exercise1Counter" />
+
+    <TextView
+        android:id="@+id/exercise3Counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="107dp"
+        android:layout_marginBottom="8dp"
+        android:text="3"
+        app:layout_constraintBottom_toTopOf="@+id/exercise4Counter"
+        app:layout_constraintStart_toEndOf="@+id/exercise3" />
+
+    <TextView
+        android:id="@+id/exercise4Counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="144dp"
+        android:layout_marginBottom="239dp"
+        android:text="3"
+        app:layout_constraintBottom_toTopOf="@+id/streakTitle"
+        app:layout_constraintStart_toEndOf="@+id/exercise4" />
+
+    <Button
+        android:id="@+id/backButtonEX"
+        style="@style/BlackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:text="Return"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
