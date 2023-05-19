@@ -2,6 +2,7 @@ package com.example.androidfitnessapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +12,9 @@ import android.preference.PreferenceManager;
 import android.os.Handler;
 import android.widget.Toast;
 import java.util.Date;
+import com.example.androidfitnessapp.classes.FbHelper;
+import java.util.UUID;
+
 
 public class ExerciseActivity extends AppCompatActivity {
 
@@ -45,7 +49,7 @@ public class ExerciseActivity extends AppCompatActivity {
         exercise4Counter = findViewById(R.id.exercise4Counter);
 
         // call variables from those defined in this class
-        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        sharedPreferences = getSharedPreferences("sharedPreferences", Context.MODE_PRIVATE);
         streakCount = sharedPreferences.getInt("streakCount", 0);
         normalExerciseCount = sharedPreferences.getInt("normalExerciseCount", 1);
         easyExerciseCount = sharedPreferences.getInt("easyExerciseCount", 3);
@@ -94,6 +98,10 @@ public class ExerciseActivity extends AppCompatActivity {
                     exercise4Counter.setText(String.valueOf(easyExerciseCount));
 
                     visibleStreak.setText(String.valueOf(streakCount));
+
+
+
+
                     saveData(currentTime);
 
                     handler.postDelayed(delayRunnable, 30000); // 30 seconds delay before reset
@@ -119,23 +127,51 @@ public class ExerciseActivity extends AppCompatActivity {
         editor.putInt("normalExerciseCount", normalExerciseCount);
         editor.putInt("easyExerciseCount", easyExerciseCount);
         editor.putLong("lastButtonClickTime", currentTime);
+
+        //grab user details
+        String firstName = sharedPreferences.getString("firstName", "");
+        String lastName = sharedPreferences.getString("lastName", "");
+        String userId = sharedPreferences.getString( "userId", "4");
+        FbHelper fbHelper = new FbHelper();
+
+        //create new user if one doesn't exist otherwise, update existing user
+        if (userId.equals("4")){
+            userId = UUID.randomUUID().toString();
+            editor.putString("userId", userId);
+            fbHelper.createUser(userId, firstName, lastName, streakCount);
+
+        }else {
+            fbHelper.updateUser(userId, firstName, lastName, streakCount);
+        }
+
+
         editor.apply();
+
+
+
+
+
+
+
+        editor.apply();
+
+
     }
 
     // Function that resets all values when streak is reset
     private void resetValuesToDefault() {
-        streakCount = 0;
-        normalExerciseCount = 1;
-        easyExerciseCount = 3;
+//        streakCount = 0;
+//        normalExerciseCount = 1;
+//        easyExerciseCount = 3;
 
-        exercise1Counter.setText(String.valueOf(normalExerciseCount));
-        exercise2Counter.setText(String.valueOf(normalExerciseCount));
-        exercise3Counter.setText(String.valueOf(easyExerciseCount));
-        exercise4Counter.setText(String.valueOf(easyExerciseCount));
+ //       exercise1Counter.setText(String.valueOf(normalExerciseCount));
+ //       exercise2Counter.setText(String.valueOf(normalExerciseCount));
+ //       exercise3Counter.setText(String.valueOf(easyExerciseCount));
+ //       exercise4Counter.setText(String.valueOf(easyExerciseCount));
 
-        visibleStreak.setText(String.valueOf(streakCount));
-        saveData(0); // Reset last button click time to 0
-        canIncrementStreak = true;
+  //      visibleStreak.setText(String.valueOf(streakCount));
+  //      saveData(0); // Reset last button click time to 0
+  //      canIncrementStreak = true;
     }
 
     @Override

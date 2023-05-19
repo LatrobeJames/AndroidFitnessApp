@@ -1,28 +1,24 @@
 package com.example.androidfitnessapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
-
-
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import androidx.annotation.Nullable;
 import com.google.android.gms.common.api.ApiException;
 import android.util.Log;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import android.view.Gravity;
-import android.graphics.drawable.GradientDrawable;
-import android.graphics.Color;
+import android.content.SharedPreferences;
+import android.content.Context;
+
 
 public class WelcomeActivity extends AppCompatActivity {
 
@@ -32,6 +28,8 @@ public class WelcomeActivity extends AppCompatActivity {
     Button button123;
     GoogleSignInOptions googleSignInOptions;
     GoogleSignInClient googleSignInClient;
+
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +90,14 @@ public class WelcomeActivity extends AppCompatActivity {
                     toast.setGravity(Gravity.CENTER, 0, -600);
 
                     toast.show();
+
+                    sharedPreferences = getSharedPreferences("sharedPreferences", Context.MODE_PRIVATE);
+
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("firstName", firstName);
+                    editor.putString("lastName", lastName);
+                    editor.apply();
+
                     startActivity(intent);
                 }
             } catch (ApiException e) {
