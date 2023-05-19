@@ -23,7 +23,6 @@ public class LeaderboardActivity extends AppCompatActivity implements FbHelper.O
     private String firstName2;
     private String lastName2;
     private int fitnessScore2;
-
     private String firstName3;
     private String lastName3;
     private int fitnessScore3;
@@ -82,20 +81,20 @@ public class LeaderboardActivity extends AppCompatActivity implements FbHelper.O
         TextView currentUser = findViewById(R.id.currentUser);
         TextView currentUser1b = findViewById(R.id.currentUser1b);
 
-        // Retrieve the streakCount value from SharedPreferences
-        int bananatown = sharedPreferences.getInt("streakCount", 66);
-
+        // Retrieve the streakCount value from SharedPreferences and update all 3 values.
+        int streakLeaderBoard = sharedPreferences.getInt("streakCount", 66);
         TextView visibleStreak = findViewById(R.id.currentUserScore);
-        visibleStreak.setText(String.valueOf(bananatown));
-
+        visibleStreak.setText(String.valueOf(streakLeaderBoard));
         currentUser.setText(firstName);
         currentUser1b.setText(lastName);
+
     }
 
 
 
     @Override
     public void onUserLoaded(User user) {
+        // every time a user is found, it goes through this, filling out the leaderboard
         if (user != null) {
             if (firstName == null || lastName == null || fitnessScore == 0) {
                 // Update the TextViews with the details of the first user
@@ -111,6 +110,8 @@ public class LeaderboardActivity extends AppCompatActivity implements FbHelper.O
 
                 TextView scoreTextView1 = findViewById(R.id.score1);
                 scoreTextView1.setText(String.valueOf(fitnessScore));
+
+                //starts the loop again looking for second
                 fbHelper.getSecondHighestFitnessUser(this);
 
             } else if (firstName2 == null || lastName2 == null || fitnessScore2 == 0) {
@@ -127,6 +128,8 @@ public class LeaderboardActivity extends AppCompatActivity implements FbHelper.O
 
                 TextView scoreTextView2 = findViewById(R.id.score2);
                 scoreTextView2.setText(String.valueOf(fitnessScore2));
+
+                //starts the loop again looking for third
                 fbHelper.getThirdHighestFitnessUser(this);
             } else if (firstName3 == null || lastName3 == null || fitnessScore3 == 0) {
                 // Update the TextViews with the details of the third user
@@ -142,6 +145,8 @@ public class LeaderboardActivity extends AppCompatActivity implements FbHelper.O
 
                 TextView scoreTextView3 = findViewById(R.id.score3);
                 scoreTextView3.setText(String.valueOf(fitnessScore3));
+
+                //starts the loop again looking for fourth
                 fbHelper.getFourthHighestFitnessUser(this);
             } else if (firstName4 == null || lastName4 == null || fitnessScore4 == 0) {
                 // Update the TextViews with the details of the fourth user
@@ -157,6 +162,8 @@ public class LeaderboardActivity extends AppCompatActivity implements FbHelper.O
 
                 TextView scoreTextView4 = findViewById(R.id.score4);
                 scoreTextView4.setText(String.valueOf(fitnessScore4));
+
+                //starts the loop again looking for fifth
                 fbHelper.getFifthHighestFitnessUser(this);
             } else {
                 // Update the TextViews with the details of the fifth user

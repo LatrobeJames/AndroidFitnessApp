@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -15,6 +16,9 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.androidfitnessapp.R;
 import com.example.androidfitnessapp.WelcomeActivity;
 import com.example.androidfitnessapp.databinding.FragmentSettingsBinding;
+import com.google.firebase.auth.FirebaseAuth;
+import android.util.Log;
+
 
 public class SettingsFragment extends Fragment {
 
@@ -36,7 +40,10 @@ public class SettingsFragment extends Fragment {
         Button returnButton = root.findViewById(R.id.logOut);
         returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
+
             public void onClick(View v) {
+                signOut();
+                Toast.makeText(requireActivity(), "Successfully Logged Out", Toast.LENGTH_SHORT).show();
                 returnToWelcomeActivity();
             }
         });
@@ -53,5 +60,11 @@ public class SettingsFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    private void signOut() {
+        FirebaseAuth.getInstance().signOut();
+        Log.d("SignOut", "User signed out");
+        // Add any additional code to handle the sign out
     }
 }

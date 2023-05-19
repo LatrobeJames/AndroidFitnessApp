@@ -40,32 +40,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-
-
-/////////////////////////////////////////GOOGLE SSO////////////////////////////////
-/////////////////////////////////////////GOOGLE SSO////////////////////////////////
-/////////////////////////////////////////GOOGLE SSO////////////////////////////////
-//        signInRequest = BeginSignInRequest.builder()
-//                .setGoogleIdTokenRequestOptions(
-//                        BeginSignInRequest.GoogleIdTokenRequestOptions.builder()
-//                                .setSupported(true)
-//                                // Your server's client ID, not your Android client ID.
-//                                .setServerClientId(getString(R.string.your_web_client_id))
-//                                // i swear its   "client_id": "107375448509330110640", but wont work
-//
-//                                // Only show accounts previously used to sign in.
-//                                .setFilterByAuthorizedAccounts(true)
-//                                .build())
-//                .build()
-/////////////////////////////////////////GOOGLE SSO////////////////////////////////
-/////////////////////////////////////////GOOGLE SSO////////////////////////////////
-/////////////////////////////////////////GOOGLE SSO////////////////////////////////
-
-
-
-
-
     }
 
 }

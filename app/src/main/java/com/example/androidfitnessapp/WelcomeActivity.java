@@ -52,6 +52,18 @@ public class WelcomeActivity extends AppCompatActivity {
         button123.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                String firstName1 = "dev";
+                String lastName1 = "account";
+                sharedPreferences = getSharedPreferences("sharedPreferences", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("firstName", firstName1);
+                editor.putString("lastName", lastName1);
+                editor.apply();
+                Toast toast =Toast.makeText(WelcomeActivity.this, "Logged in as: " + firstName1 + " " + lastName1, Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, -600);
+                toast.show();
+
                 Intent intent2 = new Intent(WelcomeActivity.this, MainActivity.class);
                 startActivity(intent2);
             }
@@ -68,6 +80,7 @@ public class WelcomeActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+        // doing google SSO
         if (requestCode == 100) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
@@ -85,12 +98,12 @@ public class WelcomeActivity extends AppCompatActivity {
                     intent.putExtra("firstName", firstName);
                     intent.putExtra("lastName", lastName);
 
-// moves the toast to upper centre and gives it the name of the google sso
+                    // moves the toast to upper centre and gives it the name of the google sso
                     Toast toast =Toast.makeText(this, "Logged in as: " + firstName + " " + lastName, Toast.LENGTH_SHORT);
                     toast.setGravity(Gravity.CENTER, 0, -600);
-
                     toast.show();
 
+                    // puts the google SSO names into the shared preferences
                     sharedPreferences = getSharedPreferences("sharedPreferences", Context.MODE_PRIVATE);
 
                     SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -98,6 +111,7 @@ public class WelcomeActivity extends AppCompatActivity {
                     editor.putString("lastName", lastName);
                     editor.apply();
 
+                    //starts the new activity (main activity)
                     startActivity(intent);
                 }
             } catch (ApiException e) {
