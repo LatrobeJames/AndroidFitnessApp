@@ -18,21 +18,21 @@ import java.util.UUID;
 
 public class ExerciseActivity extends AppCompatActivity {
 
-    private Button backButtonEX;
-    private Button streak;
-    private TextView visibleStreak;
-    private TextView exercise1Counter;
-    private TextView exercise2Counter;
-    private TextView exercise3Counter;
-    private TextView exercise4Counter;
-    private int streakCount;
-    private int normalExerciseCount;
-    private int easyExerciseCount;
-    private SharedPreferences sharedPreferences;
-    private boolean canIncrementStreak = true;
-    private Handler handler;
-    private Runnable delayRunnable;
-    private long lastButtonClickTime;
+    protected Button backButtonEX;
+    protected Button streak;
+    protected TextView visibleStreak;
+    protected TextView exercise1Counter;
+    protected TextView exercise2Counter;
+    protected TextView exercise3Counter;
+    protected TextView exercise4Counter;
+    protected int streakCount;
+    protected int normalExerciseCount;
+    protected int easyExerciseCount;
+    protected SharedPreferences sharedPreferences;
+    protected boolean canIncrementStreak = true;
+    protected Handler handler;
+    protected Runnable delayRunnable;
+    protected long lastButtonClickTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -179,5 +179,39 @@ public class ExerciseActivity extends AppCompatActivity {
         super.onDestroy();
 
         // handler.removeCallbacks(delayRunnable);
+    }
+
+
+    protected void handleButtonClick() {
+        long currentTime = new Date().getTime();
+        long elapsedTime = currentTime - lastButtonClickTime;
+
+        if (canIncrementStreak && elapsedTime >= 30000) {
+            canIncrementStreak = false; // Disable further button presses
+            streakCount++;
+            normalExerciseCount++;
+            easyExerciseCount++;
+
+            exercise1Counter.setText(String.valueOf(normalExerciseCount));
+            exercise2Counter.setText(String.valueOf(normalExerciseCount));
+            exercise3Counter.setText(String.valueOf(easyExerciseCount));
+            exercise4Counter.setText(String.valueOf(easyExerciseCount));
+
+            visibleStreak.setText(String.valueOf(streakCount));
+
+            saveData(currentTime);
+
+            handler.postDelayed(delayRunnable, 30000); // 30 seconds delay before reset
+        }
+        // This was supposed to reset the streak but I ran into too many problems for now
+        // else if (elapsedTime >= 60000) {
+        // resetValuesToDefault();
+        // Toast.makeText(ExerciseActivity.this, "Time expired! Values reset to default.", Toast.LENGTH_SHORT).show() }
+
+        // I don't know why but the exercise page needs to be closed and re-opened for this toast to show
+        // else if (elapsedTime < 30000) {
+        // long remainingTime = 30000 - elapsedTime;
+        // Toast.makeText(ExerciseActivity.this, "You're too early! Button can be pressed again in " + remainingTime / 1000 + " seconds.", Toast.LENGTH_SHORT).show();
+        // }
     }
 }

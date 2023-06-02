@@ -120,10 +120,4 @@ public class WelcomeActivity extends AppCompatActivity {
             }
         }
     }
-
-   // private void AuthedHomeActivity() {
-   //     finish();
-   //     Intent intent = new Intent(getApplicationContext(), AuthedHomeActivity.class);
-   //     startActivity(intent);
-   // }
 }

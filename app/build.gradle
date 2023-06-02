@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'com.google.gms.google-services'
+
 }
 
 android {
@@ -49,10 +50,26 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:20.0.4'
     implementation 'com.google.android.gms:play-services-auth:20.5.0'
     testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     implementation platform('com.google.firebase:firebase-bom:32.0.0')
     implementation  'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.android.gms:play-services-auth:19.2.0'
     implementation 'com.google.firebase:firebase-firestore:23.0.0'
+
+
+    testImplementation 'org.mockito:mockito-core:3.11.2'
+    androidTestImplementation 'org.mockito:mockito-android:3.11.2'
+    androidTestImplementation 'androidx.test:core:'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test:runner:1.5.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    //androidTestImplementation 'com.android.support.test:rules:1.5.2'
+    androidTestImplementation 'com.androidsupport.test:runner:1.5.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.7.1'
+
+
+
+
 }
